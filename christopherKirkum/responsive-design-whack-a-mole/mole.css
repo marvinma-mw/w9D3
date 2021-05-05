@@ -4,6 +4,7 @@
     width: 640px;
     height: 482px;
     display: inline-block;
+    overflow: hidden;
 }
 .wgs__mole-hill{
     position: absolute;
@@ -16,4 +17,14 @@
     width: 376px;
     height: 356px;
     left:108px
+}
+
+.wgs__mole-head--hidden{
+    position: absolute;
+    width: 376px;
+    height: 356px;
+    left:108px;
+    margin-top:482px;
+    transition-property: margin-top;
+    transition-duration: 0.25s;
 }
