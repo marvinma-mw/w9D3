@@ -1,8 +1,13 @@
 // Write your JS here.
 
   let popUpRandomMole=()=>{
-    let moles = document.querySelectorAll(".wgs__mole-head");
+    let moles = document.querySelectorAll(".wgs__mole-head:not(.wgs__mole-head--whacked)");
     let random = Math.floor(Math.random()*(moles.length));
+    if(moles.length < 1){
+        window.alert("You Winn!!")
+        return
+    }
+
     let currentMole = moles[random];
     currentMole.classList.remove("wgs__mole-head--hidden");
     setTimeout(()=>{hidenMole(currentMole)},3000);
@@ -19,8 +24,8 @@ window.addEventListener('DOMContentLoaded', () => {
   setTimeout(popUpRandomMole,0);
   moles.forEach(ele => {
       ele.addEventListener("click", ()=>{
-          ele.classList.add("wgs__mole-head--hidden")
+          ele.classList.add("wgs__mole-head--hidden", "wgs__mole-head--whacked")
       })
 
   });
-  });
+});
